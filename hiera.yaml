@@ -15,6 +15,7 @@ hierarchy:
     lookup_key: eyaml_lookup_key
     path: "secrets/secret.eyaml"
     options:
+      pkcs7_private_key: "/opt/puppetlabs/puppet/bin/keys/private_key.pkcs7.pem"
       pkcs7_public_key: "/opt/puppetlabs/puppet/bin/keys/public_key.pkcs7.pem"
 
   - name: "Personal"
