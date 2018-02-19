@@ -1,0 +1,25 @@
+---
+# Hiera 5 Global configuration file
+
+version: 5
+
+defaults:
+  datadir: data 
+  data_hash: yaml_data
+
+hierarchy:
+  - name: "Nodal"
+    path: "nodes/%{::trusted.certname}.yaml"
+
+  - name: "Secret data"
+    lookup_key: eyaml_lookup_key
+    path: "secrets/secret.eyaml"
+    options:
+      pkcs7_public_key: "/opt/puppetlabs/puppet/bin/keys/public_key.pkcs7.pem"
+
+  - name: "Personal"
+    path: "personal.yaml"
+
+  - name: "Common"
+    path: "common.yaml"
+
